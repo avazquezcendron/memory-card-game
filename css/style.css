@@ -1,7 +1,8 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -12,15 +13,23 @@ body {
 .grid {
   max-width: 960px;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .card {
   position: relative;
+  -webkit-transition: all .4s linear;
+  -o-transition: all .4s linear;
   transition: all .4s linear;
-  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
   margin: 5px;
 }
 
@@ -34,24 +43,34 @@ body {
 .back,
 .front {
   position: absolute;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .front {
-  z-index: 2;
   background: #FAB942 url('../img/question.gif') no-repeat center center / contain;
 }
 
 .back {
-  transform: rotateY(180deg);
-  background-color: #6589F9;
-  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  background-color: #6589F9;
+
+}
+
+.backFamily {
+  background-size: cover;
+}
+
+.backSMB {
+  background-size: contain;
 }
 
 .selected {
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 .match .front {

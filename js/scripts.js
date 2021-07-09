@@ -1,6 +1,6 @@
 'use strict';
 
-var cardsArray = [{
+var cardsArrayFamily = [{
   'name': 'chivi',
   'img': 'img/chivi.png'
 }, {
@@ -38,6 +38,55 @@ var cardsArray = [{
   'img': 'img/chino.png'
 }];
 
+var cardsArraySMB1 = [{
+  'name': 'shell',
+  'img': 'img/blueshell.png'
+}, {
+  'name': 'star',
+  'img': 'img/star.png'
+}, {
+  'name': 'bobomb',
+  'img': 'img/bobomb.png'
+}, {
+  'name': 'mario',
+  'img': 'img/mario.png'
+}, {
+  'name': 'luigi',
+  'img': 'img/luigi.png'
+}, {
+  'name': 'peach',
+  'img': 'img/peach.png'
+}, {
+  'name': '1up',
+  'img': 'img/1up.png'
+}, {
+  'name': 'mushroom',
+  'img': 'img/mushroom.png'
+}, {
+  'name': 'thwomp',
+  'img': 'img/thwomp.png'
+}, {
+  'name': 'bulletbill',
+  'img': 'img/bulletbill.png'
+}, {
+  'name': 'coin',
+  'img': 'img/coin.png'
+}, {
+  'name': 'goomba',
+  'img': 'img/goomba.png'
+}];
+
+
+const FAMILY = 'family';
+const SMB = 'smb';
+
+const MATCHTYPE = FAMILY | SMB;
+
+var matchType = SMB;
+
+var cardsArray = matchType == FAMILY ? cardsArrayFamily : cardsArraySMB1;
+// var cardsArray = cardsArrayFamily;
+
 var gameGrid = cardsArray.concat(cardsArray).sort(function () {
   return 0.5 - Math.random();
 });
@@ -67,8 +116,12 @@ var createGrid = () => gameGrid.forEach(function (item) {
   front.classList.add('front');
 
   var back = document.createElement('div');
-  back.classList.add('back');
   back.style.backgroundImage = 'url(' + img + ')';
+  back.classList.add('back');
+  if (matchType == FAMILY)
+    back.classList.add('backFamily');
+  else    
+    back.classList.add('backSMB');  
 
   grid.appendChild(card);
   card.appendChild(front);

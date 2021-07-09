@@ -23,7 +23,7 @@ body {
   background-color: transparent;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/icon-sound-on.svg);
+  background-image: url("../img/icon-sound-on.svg");
   background-size: 100%;
   border: none;
   outline: none;
@@ -57,7 +57,7 @@ body {
   }
 }
 .btn-sound.is-playing {
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/icon-sound-on.svg);
+  background-image: url("../img/icon-sound-on.svg");
   -webkit-animation: shake 10s 0.6s 3;
           animation: shake 10s 0.6s 3;
 }
@@ -168,7 +168,14 @@ main {
 .success .success-message {
   color: white;
   font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 5%;
 }
+.success .match-type-message {
+  color: white;
+  font-size: 2rem;
+}
+
 @media (min-width: 450px) {
   .success .success-message {
     font-size: 4rem;
@@ -227,10 +234,17 @@ main {
   opacity: 0;
   transition: opacity 0.2s 0.4s;
 }
+.success-icon .front::before {
+  margin-top: 6%;
+}
 .is-visible .success-icon .front {
   opacity: 1;
   -webkit-animation: bounce 0.5s 0.4s ease-out forwards;
           animation: bounce 0.5s 0.4s ease-out forwards;
+}
+
+.match-type-selection input{
+  cursor: pointer;
 }
 
 .btn-continue {
@@ -246,6 +260,7 @@ main {
   border-radius: 6px;
   outline: none;
   box-shadow: 0 1px 0 #e1662e, 0 4px 0 #a54418;
+  display: none;
 }
 .btn-continue:before {
   content: "";
@@ -301,6 +316,71 @@ main {
 }
 .back:before {
   box-shadow: 48px 6px #270300, 54px 6px #270300, 42px 12px #270300, 48px 12px #270300, 54px 12px #270300, 60px 12px #270300, 36px 18px #270300, 42px 18px #270300, 48px 18px #270300, 54px 18px #270300, 60px 18px #270300, 66px 18px #270300, 30px 24px #270300, 36px 24px #270300, 42px 24px #270300, 48px 24px #270300, 54px 24px #270300, 60px 24px #270300, 66px 24px #270300, 72px 24px #270300, 24px 30px #270300, 36px 30px #270300, 30px 30px #270300, 36px 30px #270300, 42px 30px #270300, 48px 30px #270300, 54px 30px #270300, 60px 30px #270300, 66px 30px #270300, 72px 30px #270300, 78px 30px #270300, 24px 36px #270300, 30px 36px #270300, 36px 36px white, 42px 36px white, 48px 36px #270300, 54px 36px #270300, 60px 36px #270300, 66px 36px white, 72px 36px #270300, 78px 36px #270300, 18px 42px #270300, 24px 42px #270300, 30px 42px #270300, 36px 42px white, 42px 42px white, 48px 42px white, 54px 42px #270300, 60px 42px #270300, 66px 42px white, 72px 42px #270300, 78px 42px #270300, 84px 42px #270300, 18px 48px #270300, 24px 48px #270300, 30px 48px #270300, 36px 48px white, 42px 48px white, 48px 48px white, 54px 48px white, 60px 48px #270300, 66px 48px white, 72px 48px #270300, 78px 48px #270300, 84px 48px #270300, 12px 54px #270300, 18px 54px #270300, 24px 54px #270300, 30px 54px #270300, 36px 54px white, 42px 54px white, 48px 54px #270300, 54px 54px white, 60px 54px white, 66px 54px white, 72px 54px #270300, 78px 54px #270300, 84px 54px #270300, 90px 54px #270300, 12px 60px #270300, 18px 60px #270300, 24px 60px #270300, 30px 60px #270300, 36px 60px white, 42px 60px white, 48px 60px #270300, 54px 60px #270300, 60px 60px white, 66px 60px white, 72px 60px #270300, 78px 60px #270300, 84px 60px #270300, 90px 60px #270300, 12px 66px #270300, 18px 66px #270300, 24px 66px #270300, 30px 66px #270300, 36px 66px white, 42px 66px white, 48px 66px #270300, 54px 66px #270300, 60px 66px #270300, 66px 66px white, 72px 66px #270300, 78px 66px #270300, 84px 66px #270300, 90px 66px #270300, 12px 72px #270300, 18px 72px #270300, 24px 72px #270300, 30px 72px #270300, 36px 72px #270300, 42px 72px #270300, 48px 72px #270300, 54px 72px #270300, 60px 72px #270300, 66px 72px #270300, 72px 72px #270300, 78px 72px #270300, 84px 72px #270300, 90px 72px #270300, 18px 78px #270300, 24px 78px #270300, 30px 78px #270300, 36px 78px #270300, 42px 78px #270300, 48px 78px #270300, 54px 78px #270300, 60px 78px #270300, 66px 78px #270300, 72px 78px #270300, 78px 78px #270300, 84px 78px #270300, 42px 84px #270300, 48px 84px #270300, 54px 84px #270300, 60px 84px #270300, 42px 90px #270300, 48px 90px #270300, 54px 90px #270300, 60px 90px #270300, 30px 96px #270300, 36px 96px #270300, 42px 96px #270300, 48px 96px #270300, 54px 96px #270300, 60px 96px #270300, 66px 96px #270300, 72px 96px #270300;
+}
+
+[data-type=familyMember] .front {
+  background-color: transparent !important;
+}
+
+[data-type=familyMember] .front:before {
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  /* background-color: rgba(0, 0, 0, 0.15) !important; */
+  /* background-size: cover;   */
+  height: 100% !important;
+  width: 100% !important;
+  inset: 0;
+}
+
+
+[data-name=chino] .front:before {
+  background-image: url("../img/chino.png");
+}
+
+[data-name=chivi] .front:before {
+  background-image: url("../img/chivi.png");
+}
+
+[data-name=elo] .front:before {
+  background-image: url("../img/elo.png");
+}
+
+[data-name=fredy] .front:before {
+  background-image: url("../img/fredy.png");
+}
+
+[data-name=carmen] .front:before {
+  background-image: url("../img/carmen.png");
+}
+
+[data-name=tay] .front:before {
+  background-image: url("../img/tay.png");
+}
+
+[data-name=tay2] .front:before {
+  background-image: url("../img/tay2.png");
+}
+
+[data-name=marcos] .front:before {
+  background-image: url("../img/marcos.png");
+}
+
+[data-name=montse] .front:before {
+  background-image: url("../img/montse.png");
+}
+
+[data-name=runa] .front:before {
+  background-image: url("../img/runa.png");
+}
+
+[data-name=negrita] .front:before {
+  background-image: url("../img/negrita.png");
+}
+
+[data-name=agus] .front:before {
+  background-image: url("../img/agus.png");
 }
 
 [data-type=mushroom] .front:before {
