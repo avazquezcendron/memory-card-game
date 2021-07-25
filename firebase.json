@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "memory-card-game",
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
