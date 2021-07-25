@@ -151,14 +151,18 @@ var assetsUrl = './sounds/',
   soundNoMatch = new Audio(assetsUrl + sound[2]);
 
 // Turn on the sound if you want that real deal throwback experience
-$btnSound.on('click', function (e) {
-  e.preventDefault();
-  $(this).toggleClass(playSoundClass);
-  if ($(this).hasClass(playSoundClass)) {
+const playAudio = () => {
+  if ($btnSound.hasClass(playSoundClass)) {
     $themeSongEl.play();
   } else {
     $themeSongEl.pause();
   }
+}
+
+$btnSound.on('click', function (e) {
+  e.preventDefault();
+  $(this).toggleClass(playSoundClass);
+  playAudio();
 });
 
 const FAMILY = 'family';
@@ -303,7 +307,6 @@ var startGame = () => {
 startGame();
 
 
-
 // Remove the score update class after the animation completes
 $itemCount.on(
   'webkitAnimationEnd oanimationend msAnimationEnd animationend',
@@ -317,6 +320,7 @@ $btnContinue.on('click', function () {
   $success.removeClass(visibleClass);
   createGrid();
   shuffleCards();
+  playAudio();
   setTimeout(function () {
     turnsCount = 2;
     $turns.removeClass(lastTurnClass).html(turnsCount);
